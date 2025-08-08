@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Note Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static_files', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Music Note Finder</h1>
+        <p>Upload a song to extract the vocal melody notes</p>
+        
+        <div class="upload-container">
+            <input type="file" id="audio-upload" accept="audio/*">
+            <button id="upload-btn">Upload Song</button>
+        </div>
+        
+        <div class="loading hidden">
+            <div class="spinner"></div>
+            <p>Processing audio...</p>
+        </div>
+        
+        <div class="results hidden">
+            <h2>Detected Notes</h2>
+            <div id="notes-display"></div>
+            
+            <h2>Virtual Keyboard</h2>
+            <div id="keyboard"></div>
+        </div>
+        
+        <div class="error hidden" id="error-message"></div>
+    </div>
+    
+    <script src="{{ url_for('static_files', filename='js/script.js') }}"></script>
+</body>
+</html>
