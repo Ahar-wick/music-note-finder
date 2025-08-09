@@ -37,6 +37,6 @@ def index():
     
     return render_template('index.html')
 
-@main.route('/static/<path:filename>')
+@main.route('/static/<path:filename>', endpoint='static_files')
 def static_files(filename):
     return send_from_directory('static', filename)
